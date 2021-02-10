@@ -8,13 +8,25 @@ function genRand(min, max) {
 export default function App() {
 
     const [userInput, setUserInput] = useState(null);
-    const [left, setLeft] = useState(genRand(2, 9));
-    const [right, setRight] = useState(genRand(1, 9));
+    const [leftSeed, setLeftSeed] = useState(9);
+    const [rightSeed, setRightSeed] = useState(9);
+    const [left, setLeft] = useState(genRand(2, leftSeed));
+    const [right, setRight] = useState(genRand(1, rightSeed));
     const [outputString, setOutputString] = useState('');
     const [history, setHistory] = useState([]);
     const [winCount, setWinCount] = useState(0);
 
     const inputEl = useRef();
+
+    const changeDanButtonHandler = (e) => {
+        const leftSeed = parseInt(
+            prompt('몇단까지?(2보다 큰 자연수)', 9));
+        const rightSeed = parseInt(
+            prompt(`${leftSeed}단에서 최대 몇배수까지?(9 이상의 자연수)`, 9));
+        alert(`다음 문제부터 적용됩니다. (${leftSeed}*${rightSeed}단)`);
+        setLeftSeed(leftSeed);
+        setRightSeed(rightSeed);
+    }
 
     const changeHandler = (e) => {
         setUserInput(parseInt(e.target.value));
@@ -37,8 +49,8 @@ export default function App() {
             userInput: userInput
         }]);
         inputEl.current.value = null;
-        setLeft(genRand(2, 9));
-        setRight(genRand(1, 9));
+        setLeft(genRand(2, leftSeed));
+        setRight(genRand(1, rightSeed));
         inputEl.current.focus();
     }
 
@@ -56,18 +68,22 @@ export default function App() {
         });
 
     return (
-        <div className="App-header">
-            <div className="output">{outputString}</div>
-            <div className="question">{left} * {right} = ?</div>
-            <form className="input-form" onSubmit={submitHandler}>
-                <input ref={inputEl} type="text" onChange={changeHandler}/>
-                <button type="submit">제출</button>
-            </form>
-            <div>{`정답 횟수: ${winCount}`}</div>
-            <div>History</div>
-            <div>
-                {renderHistory()}
+        <>
+            <div className="App-header">
+                <div className="output">{outputString}</div>
+                <div className="question">{left} * {right} = ?</div>
+                <div>출제범위: {leftSeed}*{rightSeed}단</div>
+                <button onClick={changeDanButtonHandler}>단 바꾸기</button>
+                <form className="input-form" onSubmit={submitHandler}>
+                    <input ref={inputEl} type="text" onChange={changeHandler}/>
+                    <button type="submit">제출</button>
+                </form>
+                <div>{`정답 횟수: ${winCount}`}</div>
+                <div>History</div>
+                <div>
+                    {renderHistory()}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
