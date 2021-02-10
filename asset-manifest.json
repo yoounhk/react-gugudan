@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-gugudan/static/css/main.1e7f7509.chunk.css",
-    "main.js": "/react-gugudan/static/js/main.a8be769e.chunk.js",
-    "main.js.map": "/react-gugudan/static/js/main.a8be769e.chunk.js.map",
+    "main.js": "/react-gugudan/static/js/main.f5692cce.chunk.js",
+    "main.js.map": "/react-gugudan/static/js/main.f5692cce.chunk.js.map",
     "runtime-main.js": "/react-gugudan/static/js/runtime-main.edda74f1.js",
     "runtime-main.js.map": "/react-gugudan/static/js/runtime-main.edda74f1.js.map",
     "static/js/2.609c121e.chunk.js": "/react-gugudan/static/js/2.609c121e.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.edda74f1.js",
     "static/js/2.609c121e.chunk.js",
     "static/css/main.1e7f7509.chunk.css",
-    "static/js/main.a8be769e.chunk.js"
+    "static/js/main.f5692cce.chunk.js"
   ]
 }
