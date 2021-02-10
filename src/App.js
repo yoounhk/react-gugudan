@@ -20,6 +20,7 @@ export default function App() {
     }
 
     const submitHandler = (e) => {
+        e.preventDefault();
         const answer = left * right;
         if (answer === userInput) {
             setOutputString(`정답입니다!`);
