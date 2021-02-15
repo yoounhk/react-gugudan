@@ -7,22 +7,12 @@ body {
 }
 
 .App-header {
-  height: 100vh;
+  height: 500px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
   text-align: center;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

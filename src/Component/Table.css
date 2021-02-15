@@ -1,0 +1,22 @@
+table, tr, th, td{
+    border: 1px solid white;
+}
+
+table * {
+    color: white;
+}
+
+table {
+    position: relative;
+    margin: 50px auto;
+    width: 80%;
+}
+
+td {
+    text-align: center;
+    width:2.5%;
+}
+
+.button-wrapper {
+    text-align: center;
+}
